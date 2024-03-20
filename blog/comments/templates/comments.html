@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Комметарии</title>
+</head>
+<body>
+  <p>{{ post }}</p>
+  <form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </form>
+  {% for comment in comments %}
+    <p>{{ comment.text }}</p>
+    <p>{{ comment.date }}</p>
+  {% endfor %}
+</body>
+</html>
